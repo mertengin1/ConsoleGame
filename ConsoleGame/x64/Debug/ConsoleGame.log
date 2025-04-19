@@ -1,0 +1,27 @@
+﻿  game.cpp
+C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(34,16): warning C4552: '+': result of expression not used
+C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(51,3): error C3861: 'win': identifier not found
+C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(78,4): error C2660: 'choseDirection': function does not take 1 arguments
+      C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(59,6):
+      see declaration of 'choseDirection'
+      C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(78,4):
+      while trying to match the argument list '(Player)'
+  
+C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(95,2): error C2660: 'choseDirection': function does not take 1 arguments
+      C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(59,6):
+      see declaration of 'choseDirection'
+      C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(95,2):
+      while trying to match the argument list '(Player)'
+  
+C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(125,2): error C2660: 'choseDirection': function does not take 1 arguments
+      C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(59,6):
+      see declaration of 'choseDirection'
+      C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(125,2):
+      while trying to match the argument list '(Player)'
+  
+C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(131,4): error C2660: 'choseDirection': function does not take 1 arguments
+      C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(59,6):
+      see declaration of 'choseDirection'
+      C:\Users\merte\Yazilim Dosyalarim\Visual Studio Projects\CPP\ConsoleGame\game.cpp(131,4):
+      while trying to match the argument list '(Player)'
+  

@@ -29,13 +29,13 @@ void chestFind(Player& player) {
 	cout << "You find chest do you wanna open? (yes,no)" << endl;
 	cin >> openChest;
 	if (openChest == "yes") {
-		cout << "You find +1 power" << endl;
+		cout << "You open the chest and find power item, your power incrase +1" << endl;
 		cout << "Your adventure continue" << endl;
 		player.power + 1;
 
 	}
 	else if (openChest == "no") {
-		cout << "You continue your adventure " << endl;
+		cout << "You continue your adventure without open the chest " << endl;
 	}
 	else
 		cout << "Please enter yes or no." << endl;
@@ -43,7 +43,7 @@ void chestFind(Player& player) {
 
 void dragonFight(Player& player, Dragon& dragon) {
 	cout << "Dragon show up" << endl;
-	cout << "Dragon want to fight with you" << endl;
+	cout << "Dragon fly over you and wanna eat you" << endl;
 	cout << endl << "Fight begin!" << endl;
 	if (player.power > dragon.health) {
 		dragon.health -= player.power;
@@ -63,6 +63,9 @@ void choseDirection(Player& player, Dragon& dragon) {
 	cin >> direction;
 	if (direction == "up") {
 		cout << endl << "You reach the forest " << endl;
+		cout << "You see the temple in deep of the forest" << endl;
+		cout << "You see the graveyard on the hill" << endl;
+		cout << "Wich way you wanna
 		chestFind(player);
 	}
 	else if (direction == "left") {

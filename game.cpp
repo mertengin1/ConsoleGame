@@ -21,30 +21,39 @@ public:
 	string dragonName = "Great Dragon";
 	int power = 15;
 	int health = 15;
-
 };
+
+void win(Player& player) {
+	player.power += 1;
+	player.health += 1;
+
+	if (player.power >= player.level * 5) {
+		++player.level;
+		cout << endl << player.userName << " Level up to " << player.level << endl;
+	}
+}
 
 void chestFind(Player& player) {
 	string openChest;
 	cout << "You find chest do you wanna open? (yes,no)" << endl;
 	cin >> openChest;
 	if (openChest == "yes") {
-		cout << "You open the chest and find power item, your power incrase +1" << endl;
+		cout << "You open the chest and find power item, your power increase +1" << endl;
 		cout << "Your adventure continue" << endl;
-		player.power + 1;
-
+		player.power += 1;
 	}
 	else if (openChest == "no") {
-		cout << "You continue your adventure without open the chest " << endl;
+		cout << "You continue your adventure without opening the chest " << endl;
 	}
-	else
+	else {
 		cout << "Please enter yes or no." << endl;
+	}
 }
 
 void dragonFight(Player& player, Dragon& dragon) {
-	cout << "Dragon show up" << endl;
-	cout << "Dragon fly over you and wanna eat you" << endl;
-	cout << endl << "Fight begin!" << endl;
+	cout << "Dragon shows up!" << endl;
+	cout << "The dragon flies over you and wants to eat you!" << endl;
+	cout << endl << "Fight begins!" << endl;
 	if (player.power > dragon.health) {
 		dragon.health -= player.power;
 		cout << player.userName << " defeated " << dragon.dragonName << endl;
@@ -58,50 +67,38 @@ void dragonFight(Player& player, Dragon& dragon) {
 
 void choseDirection(Player& player, Dragon& dragon) {
 	string direction;
-	cout << endl << "Please chose direction: " << endl;
-	cout << "up, right, left " << endl;
+	cout << endl << "Please choose direction: " << endl;
+	cout << "up, right, left" << endl;
 	cin >> direction;
 	if (direction == "up") {
 		cout << endl << "You reach the forest " << endl;
-		cout << "You see the temple in deep of the forest" << endl;
+		cout << "You see the temple in the depths of the forest" << endl;
 		cout << "You see the graveyard on the hill" << endl;
-		cout << "Wich way you wanna
+		cout << "Which way do you wanna go?" << endl;
 		chestFind(player);
 	}
 	else if (direction == "left") {
 		string dragonWay;
 		cout << endl << "You reach the mountain " << endl;
 		cout << "You see the dragon flying over the mountain " << endl;
-		cout << "Do you wanna fight with dragon? (yes,no) " << endl;
+		cout << "Do you wanna fight with the dragon? (yes,no) " << endl;
 		cin >> dragonWay;
 		if (dragonWay == "yes") {
-			dragonFight(player,dragon);
+			dragonFight(player, dragon);
 		}
-		else
-			choseDirection(player);
 	}
 	else if (direction == "right") {
 		cout << endl << "You reach the desert" << endl;
 	}
-	else
-		cout << "Please chose up,left or right!" << choseDirection;
-}
-
-void win(Player& player) {
-	player.power += 1;
-	player.health += 1;
-
-	if (player.power >= player.level * 5) {
-		++player.level;
-		cout << endl << player.userName << " Level up to " << player.level << endl;
+	else {
+		cout << "Please choose up, left or right!" << endl;
 	}
-	choseDirection(player);
 }
 
 void fight(Player& player, Enemy& enemy) {
-	cout << enemy.enemyName << " show up" << endl;
-	cout << enemy.enemyName << " want to fight with you" << endl;
-	cout << endl << "Fight begin!" << endl;
+	cout << enemy.enemyName << " shows up!" << endl;
+	cout << enemy.enemyName << " wants to fight with you!" << endl;
+	cout << endl << "Fight begins!" << endl;
 	if (player.power > enemy.health) {
 		enemy.health -= player.power;
 		cout << player.userName << " defeated " << enemy.enemyName << endl;
@@ -113,28 +110,24 @@ void fight(Player& player, Enemy& enemy) {
 	}
 }
 
-
-
-
-
 int main() {
 	Player player;
 	Enemy enemy;
-	cout << "Your goal is reach the lvl 20" << endl;
-	cout << "You can chose where do you wanna go and fight with your enemy to lvl up" << endl;
-	cout << "Please enter your username: " << endl;
+	Dragon dragon;
+
+	cout << "Your goal is to reach level 20" << endl;
+	cout << "You can choose where you want to go and fight enemies to level up" << endl;
+	cout << "Please enter your username: ";
 	cin >> player.userName;
-	cout << "Welcome the game " << player.userName << " where do you wanna go?" << endl;
-	choseDirection(player);
+	cout << "Welcome to the game, " << player.userName << "! Where do you want to go first?" << endl;
+
+	choseDirection(player, dragon);
 
 	while (player.level < 20) {
 		fight(player, enemy);
-		if (player.level > player.level * 5) {
-			cout << "Please chose a direction!" << endl;
-			choseDirection(player);
-
-		}
+		choseDirection(player, dragon);
 	}
 
+	cout << "Congratulations " << player.userName << "! You reached level 20 and won the game!" << endl;
 	return 0;
 }

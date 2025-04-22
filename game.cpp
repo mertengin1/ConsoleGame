@@ -23,6 +23,18 @@ public:
 	int health = 15;
 };
 
+void menu(Player& player){
+	string menuChoise;
+	cout << "1: Travel" << endl;
+	cout << "2: Rest" << endl;
+	cout << "3: Shop" << endl;
+	cout << "4: Status" << endl;
+	cout << "5: Quit Game" << endl;
+	cin >> menuChoise;
+	
+}
+
+
 void win(Player& player) {
 	player.power += 1;
 	player.health += 1;
